@@ -1,0 +1,13 @@
+mood,site_category,site_url,engagement_score
+happy,memes,https://9gag.com,0.9
+happy,video,https://www.youtube.com,0.95
+happy,music,https://soundcloud.com,0.8
+bored,long-reads,https://medium.com,0.85
+bored,wiki,https://en.wikipedia.org,0.8
+bored,forums,https://www.reddit.com/r/AskReddit,0.75
+stressed,calm,https://www.reddit.com/r/Eyebleach,0.7
+stressed,meditation,https://www.headspace.com,0.9
+stressed,soothing-music,https://www.spotify.com,0.8
+curious,science,https://www.quantamagazine.org,0.9
+curious,news-deep,https://www.longreads.com,0.85
+curious,learn,https://www.khanacademy.org,0.95
