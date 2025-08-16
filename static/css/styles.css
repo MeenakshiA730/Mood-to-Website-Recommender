@@ -1,0 +1,33 @@
+body { background: #0b1020; color: #e8eef9; }
+.navbar { background: #141a32 !important; }
+.card { background: #121833; border: 1px solid #1f2a54; }
+.badge { background: #2a3670; }
+a, a:hover { color: #a9c1ff; }
+
+#track-canvas {
+  width: 100%;
+  max-width: 1200px;
+  height: 1600px;             /* mock long page to allow scrolling */
+  background: linear-gradient(180deg, #18224a, #0f1634 60%, #0b0f24);
+  border: 1px dashed #2f3e7a;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Mock elements inside the canvas (just for demo clicks) */
+.block {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  padding: 24px;
+  background: #0f1738;
+  border: 1px solid #2a3670;
+  border-radius: 16px;
+}
+
+.block h3 { margin-top: 0; color: #c7d5ff; }
+.block a.btn {
+  background: #2a3670; border: none; padding: 8px 14px; border-radius: 8px;
+}
+.block a.btn:hover { background: #384890; }
