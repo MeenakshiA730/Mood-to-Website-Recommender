@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row g-4">
+  <div class="col-12 col-lg-4">
+    <div class="card p-3">
+      <h4 class="mb-3">Your Mood</h4>
+      <form method="post" action="/start_session">
+        <div class="mb-3">
+          <label class="form-label">How do you feel right now?</label>
+          <select name="mood" class="form-select" required>
+            <option value="">Select…</option>
+            <option value="happy">Happy</option>
+            <option value="bored">Bored</option>
+            <option value="stressed">Stressed</option>
+            <option value="curious">Curious</option>
+          </select>
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Start & Get Suggestions</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-8">
+    <div class="card p-3">
+      <h4 class="mb-3">Mood-Based Suggestions</h4>
+      {% if recs and recs|length > 0 %}
+        <p class="text-secondary">Based on your current mood (“<span class="badge">{{ current_mood }}</span>”), here are suggestions:</p>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+          {% for r in recs %}
+            <div class="col">
+              <div class="card p-3 h-100">
+                <div class="d-flex justify-content-between align-items-start">
+                  <h5 class="mb-2">{{ r['site_category'] | title }}</h5>
+                  <span class="badge">score {{ "%.2f"|format(r['score']) }}</span>
+                </div>
+                <p class="small text-secondary">People feeling {{ current_mood }} often enjoy this.</p>
+                <a class="btn btn-sm btn-outline-info" href="{{ r['site_url'] }}" target="_blank">Open site</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <hr>
+        <a class="btn btn-success" href="/content/pageA">Try a demo page (we’ll track & heatmap)</a>
+      {% else %}
+        <p class="text-secondary">Pick a mood at left to see recommendations.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
