@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center">
+  <h4 class="mb-3">Demo Content Page — Page ID: <span class="badge">{{ page_id }}</span></h4>
+  <div>
+    <a class="btn btn-outline-info btn-sm" href="/heatmap/{{ page_id }}" target="_blank">Open Heatmap</a>
+    <a class="btn btn-outline-light btn-sm" href="/dashboard">View Dashboard</a>
+  </div>
+</div>
+
+<p class="text-secondary">Click anywhere inside the canvas; we’ll record coordinates. Scroll to generate scroll-depth. When you leave, we log your session duration & max scroll.</p>
+
+<div id="track-canvas" data-page-id="{{ page_id }}">
+  {% include "partials/_cards.html" %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/tracker.js') }}"></script>
+{% endblock %}
